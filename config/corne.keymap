@@ -9,6 +9,22 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        pass: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp X &kp C &kp S &kp D &kp W &kp E &kp N2 &kp N3 &kp LS(X) &kp LS(C) &kp LS(S) &kp LS(D) &kp LS(W) &kp LS(E) &kp AT &kp POUND>;
+            label = "NEW_MACRO";
+        };
+
+        code: code {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp N0 &kp N7 &kp N4 &kp N7 &kp N4 &kp N3 &kp N0 &kp N3>;
+            label = "CODE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
