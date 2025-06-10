@@ -13,14 +13,14 @@
         pass1: pass1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp X &kp C &kp S &kp D &kp W &kp E &kp N2 &kp N3 &kp LS(X) &kp LS(C) &kp LS(S) &kp LS(D) &kp LS(W) &kp LS(E) &kp AT &kp POUND>;
+            bindings = <&kp X &kp C &kp S &kp D &kp W &kp E &kp N2 &kp N3 &kp LS(X) &kp LS(C) &kp LS(S) &kp LS(D) &kp LS(W) &kp LS(E) &kp AT &kp POUND>;
             label = "PASS1";
         };
 
         pin: pin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp N0 &kp N7 &kp N4 &kp N7 &kp N4 &kp N3 &kp N0 &kp N3>;
+            bindings = <&kp N0 &kp N7 &kp N4 &kp N7 &kp N4 &kp N3 &kp N0 &kp N3>;
             label = "PIN";
         };
     };
