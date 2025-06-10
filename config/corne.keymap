@@ -5,24 +5,23 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
     macros {
-        pass: new_macro {
+        pass1: pass1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&none &kp X &kp C &kp S &kp D &kp W &kp E &kp N2 &kp N3 &kp LS(X) &kp LS(C) &kp LS(S) &kp LS(D) &kp LS(W) &kp LS(E) &kp AT &kp POUND>;
-            label = "NEW_MACRO";
+            label = "PASS1";
         };
 
-        code: code {
+        pin: pin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&none &kp N0 &kp N7 &kp N4 &kp N7 &kp N4 &kp N3 &kp N0 &kp N3>;
-            label = "CODE";
+            label = "PIN";
         };
     };
 
@@ -54,7 +53,7 @@
             bindings = <
 &kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7        &kp N8     &kp N9  &kp N0  &kp BSPC
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans    &kp UP_ARROW  &trans     &trans  &trans  &trans
-&kp LSHFT   &bl BL_ON     &trans        &trans        &trans        &trans          &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans  &trans
+&kp LSHFT   &pass1        &pin          &trans        &trans        &trans          &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans  &trans
                                         &kp LGUI      &trans        &kp SPACE       &kp RET   &trans        &kp RALT
             >;
         };
@@ -67,10 +66,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&kp TAB    &kp EXCL    &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LCTRL  &trans      &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &caps_word  &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+                               &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
             >;
         };
     };
